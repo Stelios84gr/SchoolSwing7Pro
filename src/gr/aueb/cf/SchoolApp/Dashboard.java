@@ -125,7 +125,7 @@ public class Dashboard extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 					Main.getDashboard().setEnabled(false);
-					Main.getViewTeachersPage().setVisible(true);				
+					Main.getViewTeachersPage().setVisible(true);
 			}
 		});
 

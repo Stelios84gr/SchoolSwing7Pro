@@ -113,6 +113,7 @@ public class InsertTeacherPage extends JFrame {
 		firstnameText.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {
+				String inputFirstname;
 				errorFirstname.setText(firstnameText.getText().trim().equals("") ? "Η συμπλήρωση του πεδίου είναι υποχρεωτική." : "");
 			}
 		});

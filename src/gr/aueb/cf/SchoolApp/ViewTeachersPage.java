@@ -102,13 +102,22 @@ public class ViewTeachersPage extends JFrame {
 		lastnameText.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Αναζήτηση");
-	
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				buildTable();
+			}
+		});
 		btnNewButton.setBackground(new Color(0, 128, 0));
 		btnNewButton.setForeground(new Color(0, 0, 0));
 		btnNewButton.setBounds(304, 130, 125, 40);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Εκκαθάριση");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				buildTable();
+			}
+		});
 		
 		btnNewButton_1.setForeground(new Color(192, 192, 192));
 		btnNewButton_1.setBounds(439, 130, 125, 40);
@@ -134,7 +143,7 @@ public class ViewTeachersPage extends JFrame {
 						// get data from the selected row
 //						String selectedStr = (String) model.getValueAt(selectedRow, 0);	// ID column
 //						selectedId = Integer.parseInt(selectedStr);
-						selectedUUID = (String) model.getValueAt(selectedRow, 0);
+						selectedUUID = (String) model.getValueAt(selectedRow, 0);		// 0 = στήλη 0 της row, δηλαδή το UUID
 					}
 				}
 			}
@@ -157,6 +166,8 @@ public class ViewTeachersPage extends JFrame {
 		JButton viewBtn = new JButton("Προβολή");
 		viewBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			Main.getViewTeachersPage().setEnabled(false);
+			Main.getTeacherView().setVisible(true);
 			}
 		});
 		viewBtn.setForeground(new Color(0, 0, 0));
@@ -196,7 +207,7 @@ public class ViewTeachersPage extends JFrame {
 		closeBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.getViewTeachersPage().setVisible(false);
-				Main.getDashboard().setVisible(true);
+				Main.getDashboard().setEnabled(true);
 			}
 		});
 		

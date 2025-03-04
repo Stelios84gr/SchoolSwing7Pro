@@ -76,7 +76,7 @@ public class LoginPage extends JFrame {
 		btnConnect.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if ((username.getText().matches("[aA]dmin")) && (Arrays.equals(password.getPassword(), "12345".toCharArray()))) {
-//					Main.getLoginPage().setVisible(false);
+					Main.getLoginPage().setVisible(false);
 					Main.getDashboard().setVisible(true);
 				} else {
 					JOptionPane.showMessageDialog(null,  "Λάθος Username ή Password", "Αδυναμία Σύνδεσης", JOptionPane.ERROR_MESSAGE);

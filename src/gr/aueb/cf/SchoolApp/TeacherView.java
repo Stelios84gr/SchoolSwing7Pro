@@ -116,7 +116,7 @@ public class TeacherView extends JFrame {
 		contentPane.add(lblKwdikos);
 		
 		kwdikosText = new JLabel("Κωδικός Εκπαιδευτή");
-		kwdikosText.setBounds(277, 155, 128, 27);
+		kwdikosText.setBounds(277, 155, 191, 27);
 		contentPane.add(kwdikosText);
 		
 		JLabel lblFirstname = new JLabel("Όνομα Εκπαιδευτή");
@@ -168,7 +168,7 @@ public class TeacherView extends JFrame {
 		contentPane.add(phoneNumText);
 		
 		emailText = new JLabel("email Εκπαιδευτή");
-		emailText.setBounds(277, 330, 128, 27);
+		emailText.setBounds(277, 330, 191, 27);
 		contentPane.add(emailText);
 		
 		streetText = new JLabel("Διεύθυνση Εκπαιδευτή");
@@ -203,7 +203,7 @@ public class TeacherView extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.getTeacherView().setVisible(false);
-				Main.getDashboard().setVisible(true);
+				Main.getViewTeachersPage().setEnabled(true);
 			}
 		});
 		btnNewButton.setBackground(new Color(0, 128, 0));
@@ -283,6 +283,6 @@ public class TeacherView extends JFrame {
 			//e.printStackTrace();
 			JOptionPane.showMessageDialog(null,  "Select error in fetch cities", "Error", JOptionPane.ERROR_MESSAGE);
 		}
-		return cities;	
+		return cities;
 	}
 }
